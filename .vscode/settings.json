@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "unity-gimersia-2025-2022.sln"
+    "dotnet.defaultSolution": "unity-gimersia-2055-2022.sln"
 }
