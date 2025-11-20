@@ -6,7 +6,8 @@ using UnityEngine.U2D; // Needed for SpriteShapeController
 public class EnvironmentGenerator : MonoBehaviour
 {
     // The Sprite Shape Controller this script will modify
-    public SpriteShapeController _spriteShapeController;
+    [SerializeField] SpriteShapeController _spriteShapeController;
+    [SerializeField] private bool _isOnEditMode = true;
 
     // Number of points along the terrain
     [SerializeField, Range(3, 100)] private int _levelLength = 50;
@@ -34,7 +35,7 @@ public class EnvironmentGenerator : MonoBehaviour
     public void OnValidate()
     {
         // Safety check to prevent null reference errors
-        if (_spriteShapeController == null)
+        if (_spriteShapeController == null || !_isOnEditMode)
             return;
 
         // Shortcut to the spline we’ll be modifying
